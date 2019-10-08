@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rememberMeApp',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -120,5 +122,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+#insert REST_Framework that enables you to do POST and DELETE
+REST_FRAMEWORK = {    
+    'DEFAULT_PERMISSION_CLASSES': [    
+        'rest_framework.permissions.AllowAny',    
+    ]    
+}
 
 django_heroku.settings(locals())
