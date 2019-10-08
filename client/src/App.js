@@ -12,6 +12,16 @@ class App extends React.Component {
       }
     ]
   }
+
+  componentDidMount = () =>{
+    fetch('/api/user/')
+      .then(res => res.json())
+      .then(users=> this.setState({ users }))
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
   render = () => {
     return (
       <div className="App">
