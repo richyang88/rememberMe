@@ -13,7 +13,7 @@ class App extends React.Component {
     ]
   }
 
-  //getting user info from database
+  //getting user info from database and turns into json data
   componentDidMount = () => {
     fetch('/api/user/')
       .then(res => res.json())
@@ -37,7 +37,7 @@ class App extends React.Component {
       {/* map users into new array user, then get new array elem id */}
         {this.state.users.map(user =>
           <option value={user.id}>
-            {users.username}
+            {user.username}
           </option>)}
       </select>
     )
@@ -47,7 +47,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header>Remember Me</header>
-        <p></p>
+        <p>{this.renderUserDropdown()}</p>
       </div>
     );
   }
