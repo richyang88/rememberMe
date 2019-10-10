@@ -1,6 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
+import { Link} from 'react-router-dom';
 import './App.css';
+
+import ServiceByUserId from './components/ServicesByUserId.js';
+//add new user form first, before doing services
+
+
+
 
 class App extends React.Component {
 
@@ -23,7 +30,7 @@ class App extends React.Component {
       })
   }
 
-  //
+  //make this into another component to be imported, call using router
   getUsersFromServer = () =>
     fetch('/api/user/')
       .then(res => {
@@ -33,13 +40,15 @@ class App extends React.Component {
 
   renderUserDropdown = () => {
     return (
-      <select>
+      <ol>
       {/* map users into new array user, then get new array elem id */}
         {this.state.users.map(user =>
-          <option value={user.id}>
-            {user.username}
-          </option>)}
-      </select>
+          <li value={user.id}>
+            <a href={`/service/${user.id}`}>
+              {user.username}
+            </a>
+          </li>)}
+      </ol>
     )
   }
 
