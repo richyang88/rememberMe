@@ -16,8 +16,8 @@ export default class ServicesByUserId extends React.Component {
             {this.state.services.map(service =>
               <li value={service.id}>
               
-                  {service.serviceName}
-               
+                {service.serviceName}
+                {'here'}
               </li>)}
           </ol>
         )
@@ -27,11 +27,11 @@ export default class ServicesByUserId extends React.Component {
         return (
         <div className="App">
             <header>services</header>
-            <p>{this.renderUserDropdown()}</p>
+            <p>{this.renderServiceDropdown()}</p>
         </div>
         )
 
     }
 }
 
-export default ServicesByUserId
+// export ServicesByUserId

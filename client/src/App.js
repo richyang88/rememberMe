@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
-import { Link} from 'react-router-dom';
+import { Link, Route, Switch} from 'react-router-dom';
 import './App.css';
 
 import ServiceByUserId from './components/ServicesByUserId.js';
@@ -44,19 +44,26 @@ class App extends React.Component {
       {/* map users into new array user, then get new array elem id */}
         {this.state.users.map(user =>
           <li value={user.id}>
-            <a href={`/service/${user.id}`}>
+            <Link to={`/service/${user.id}`}>
               {user.username}
-            </a>
+            </Link>
           </li>)}
       </ol>
     )
   }
+
 
   render = () => {
     return (
       <div className="App">
         <header>Remember Me</header>
         <p>{this.renderUserDropdown()}</p>
+        <Switch>
+        {/* <p>{renderServiceDropdown()}</p> */}
+          <Route path='/service/:id' component={ServiceByUserId} />
+          {/* <Route path='/password/:id' component={ServiceByUserId} /> */}
+        </Switch>
+
       </div>
     );
   }
