@@ -26,14 +26,16 @@ export default class ServicesByUserId extends React.Component {
                 res.json()
                 console.log(res)
             })
+// this.props.match.param.userId
 
+    
     renderServiceDropdown = () => {
         return (
             <ol>
                 {/* map users into new array user, then get new array elem id */}
                 {this.state.services.map(service =>
                     <li value={service.id}>
-
+                        {console.log(service.id)}
                         <Link to={`/password/${service.id}`}>
                             {service.serviceName}
 
@@ -55,7 +57,7 @@ export default class ServicesByUserId extends React.Component {
 
         )
     }
-
+    // if(this.props.match.param.userId = service.id){
     render = () => {
         return (
             <div className="App">
@@ -66,5 +68,6 @@ export default class ServicesByUserId extends React.Component {
 
     }
 }
+// }
 
 // export ServicesByUserId
