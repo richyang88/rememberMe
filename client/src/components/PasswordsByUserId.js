@@ -11,32 +11,32 @@ export default class PasswordByUserId extends React.Component {
     }
 
     componentDidMount = () => {
-        fetch('/api/service/')
+        fetch('/api/password/')
             .then(res => res.json())
-            .then(services => this.setState({ services }))
+            .then(passwords => this.setState({ passwords }))
             .catch(err => {
                 console.log(err)
             })
     }
 
     //make this into another component to be imported, call using router
-    getUsersFromServer = () =>
-        fetch('/api/service/')
+    getPasswordFromServer = () =>
+        fetch('/api/password/')
             .then(res => {
                 res.json()
                 console.log(res)
             })
 
-    renderServiceDropdown = () => {
+    renderPasswordDropdown = () => {
         return (
             <ol>
                 {/* map users into new array user, then get new array elem id */}
-                {this.state.services.map(service =>
-                    <li value={service.id}>
-                        <Link to={`/password/${service.id}`}>
-                        {service.serviceName}
-                        {'here'}
-                        </Link>
+                {this.state.passwords.map(password =>
+                    <li value={password.id}>
+                        {/* <Link to={`/password/${service.id}`}> */}
+                        {password.passwordField}
+                        {/* {'here'} */}
+                        {/* </Link> */}
                     </li>)}
             </ol>
         )
@@ -45,8 +45,8 @@ export default class PasswordByUserId extends React.Component {
     render = () => {
         return (
             <div className="App">
-                <header>services</header>
-                <p>{this.renderServiceDropdown()}</p>
+                <header>passwords here</header>
+                <p>{this.renderPasswordDropdown()}</p>
             </div>
         )
 

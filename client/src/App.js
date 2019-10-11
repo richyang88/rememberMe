@@ -4,7 +4,7 @@ import { Link, Route, Switch} from 'react-router-dom';
 import './App.css';
 
 import ServiceByUserId from './components/ServicesByUserId.js';
-// import PasswordsByUserId from './components/ServicesByUserId.js';
+import PasswordsByUserId from './components/PasswordsByUserId.js';
 //add new user form first, before doing services
 
 
@@ -60,11 +60,13 @@ class App extends React.Component {
         <header>Remember Me</header>
         <p>{this.renderUserDropdown()}</p>
         <Switch>
-        {/* <p>{renderServiceDropdown()}</p> */}
           {/* <Route exact path='/' component={App} /> */}
           <Route path='/service/:id' component={ServiceByUserId} />
+          {/* {'testing'} */}
+          <Switch>
+            <Route path='/password/:id' component={PasswordsByUserId} />
+          </Switch>
           
-          {/* <Route path='/password/:id' component={ServiceByUserId} /> */}
         </Switch>
 
       </div>

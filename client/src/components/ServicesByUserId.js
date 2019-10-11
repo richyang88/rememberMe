@@ -20,7 +20,7 @@ export default class ServicesByUserId extends React.Component {
     }
 
     //make this into another component to be imported, call using router
-    getUsersFromServer = () =>
+    getServiceFromServer = () =>
         fetch('/api/service/')
             .then(res => {
                 res.json()
@@ -33,9 +33,10 @@ export default class ServicesByUserId extends React.Component {
                 {/* map users into new array user, then get new array elem id */}
                 {this.state.services.map(service =>
                     <li value={service.id}>
+                    
                         <Link to={`/password/${service.id}`}>
                         {service.serviceName}
-                        {'here'}
+                        
                         </Link>
                     </li>)}
             </ol>
