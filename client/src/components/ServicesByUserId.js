@@ -39,11 +39,10 @@ export default class ServicesByUserId extends React.Component {
 
                         </Link>
 
-                        <li>
-
+                        {/* link to g home */}
+                        <li> 
                             <Link to={`/`}>
                                 {"Home"}
-
                             </Link>
                         </li>
 

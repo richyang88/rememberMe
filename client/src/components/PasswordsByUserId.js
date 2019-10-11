@@ -47,6 +47,12 @@ export default class PasswordByUserId extends React.Component {
             <div className="App">
                 <header>passwords here</header>
                 <p>{this.renderPasswordDropdown()}</p>
+                <li>
+                    <Link to={`/`}>
+                        {"Home"}
+
+                    </Link>
+                </li>
             </div>
         )
 

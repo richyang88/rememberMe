@@ -6,6 +6,7 @@ import './App.css';
 import Home from './components/Home.js';
 import ServiceByUserId from './components/ServicesByUserId.js';
 import PasswordsByUserId from './components/PasswordsByUserId.js';
+import NewUserForm from './components/NewUser.js';
 //add new user form first, before doing services
 
 
@@ -60,8 +61,10 @@ class App extends React.Component {
       <div className="App">
         <header>Remember Me</header>
         {/* <p>{this.renderUserDropdown()}</p> */}
+        <NewUserForm addNewUser={this.addNewUser} />
         <Switch>
           <Route exact path='/' component={Home} />
+          
           
           {/* <Route path='/user/:id' component={Home} /> */}
           
