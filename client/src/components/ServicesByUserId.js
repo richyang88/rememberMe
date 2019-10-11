@@ -33,13 +33,27 @@ export default class ServicesByUserId extends React.Component {
                 {/* map users into new array user, then get new array elem id */}
                 {this.state.services.map(service =>
                     <li value={service.id}>
-                    
+
                         <Link to={`/password/${service.id}`}>
-                        {service.serviceName}
-                        
+                            {service.serviceName}
+
                         </Link>
-                    </li>)}
+
+                        <li>
+
+                            <Link to={`/`}>
+                                {"Home"}
+
+                            </Link>
+                        </li>
+
+                    </li>
+
+
+                )}
+
             </ol>
+
         )
     }
 

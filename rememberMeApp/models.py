@@ -4,7 +4,7 @@ from django.db import models
 #Note: models. --> python class inheritance 
 class User(models.Model):
     email = models.EmailField(max_length = 50)
-    username = models.CharField(max_length = 30)
+    userName = models.CharField(max_length = 30)
 
 #Django field data link: https://docs.djangoproject.com/en/2.2/ref/models/fields/
 

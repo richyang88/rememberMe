@@ -4,7 +4,7 @@ from .models import User, Service, Password
 class UserSerializer(serializers.ModelSerializer):  
     class Meta:     
         model = User    
-        fields = ['id', 'email', 'username'] #pieces of serializer to convert to and from JSON data
+        fields = ['id', 'email', 'userName'] #pieces of serializer to convert to and from JSON data
             #spelling MUST match what is in on models
     
 class ServiceSerializer(serializers.ModelSerializer):
