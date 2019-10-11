@@ -3,9 +3,9 @@ import { Link, Route, Switch } from 'react-router-dom';
 
 export default class PasswordByUserId extends React.Component {
     state = {
-        services: [
+        passwords: [
             {
-                serviceName: "",
+                passwordField: "",
             }
         ]
     }
