@@ -16,11 +16,18 @@ const saveServiceToServer = (newService) =>
 export default class NewServiceForm extends React.Component {
 
     state = {
-        services: [],
-        formData: {
-            serviceName: "",
-            userId: ""
-        }
+        // services: [],
+        // formData: {
+        //     serviceName: "",
+        //     userId: ""
+        // }
+        services:[
+            {
+                serviceName:"",
+                //user id will have to be from params
+                userId:""
+            }
+        ]
     }
 
     handleInput = (evnt) => {

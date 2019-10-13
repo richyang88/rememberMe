@@ -24,38 +24,29 @@ export default class ServicesByUserId extends React.Component {
             }
         ]
     }
-    // state = {
-    //     newServices: [
-    //         {
-    //             serviceName: "",
-    //             userId: ""
 
-    //         }
-    //     ]
+    // handleInput = (evnt) => {
+    //     let newService = { ...this.state };
+    //     newService[evnt.target.name] = evnt.target.value;
+    //     this.setState(newService)
     // }
 
-    handleInput = (evnt) => {
-        let newService = { ...this.state };
-        newService[evnt.target.name] = evnt.target.value;
-        this.setState(newService)
-    }
+    // handleSubmit = (evnt) => {
+    //     evnt.preventDefault();
+    //     this.addNewService(this.state)
+    // }
 
-    handleSubmit = (evnt) => {
-        evnt.preventDefault();
-        this.addNewService(this.state)
-    }
+    // addNewService = (newServiceInfo) => {
+    //     // from other method
+    //     saveServiceToServer(newServiceInfo)
+    //         .then(newService => {
+    //             newService.issues = [];
 
-    addNewService = (newServiceInfo) => {
-        // from other method
-        saveServiceToServer(newServiceInfo)
-            .then(newService => {
-                newService.issues = [];
-
-                let service = { ...this.state.service };
-                service[newService.id] = newService;
-                this.setState({ service, currentService: newService.id })
-            })
-    }
+    //             let service = { ...this.state.service };
+    //             service[newService.id] = newService;
+    //             this.setState({ service, currentService: newService.id })
+    //         })
+    // }
     componentDidMount = () => {
         fetch('/api/service/')
             .then(res => res.json())
@@ -122,6 +113,7 @@ export default class ServicesByUserId extends React.Component {
                                 <input type="submit" value="New Service" />
                             </form>
                         </li> */}
+
                         {/* link to go home */}
 
                         <Link to={`/`}>
