@@ -2,17 +2,15 @@ import React from 'react'
 import { Link, Route, Switch } from 'react-router-dom';
 
 const saveUserToServer = (newUser) =>
-        fetch('/api/user/',
-            {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(newUser),
-            }
-        ).then(res => res.json())
+    fetch('/api/user/',
+        {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(newUser),
+        }
+    ).then(res => res.json())
 
 export default class NewUserForm extends React.Component {
-    
-
     state =
         {
             userName: ""

@@ -10,8 +10,9 @@ class User(models.Model):
 
 class Service(models.Model):
     serviceName= models.CharField(max_length = 50)
-
+    user = models.ForeignKey(User, default=1, on_delete=models.CASCADE, related_name='users')
 # Password class
 
 class Password(models.Model):
     passwordField = models.CharField(max_length = 50)
+    service = models.ForeignKey(Service, default=1, on_delete=models.CASCADE, related_name='services')

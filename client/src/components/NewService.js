@@ -2,7 +2,6 @@ import React from 'react'
 import { Link, Route, Switch } from 'react-router-dom';
 
 import NewUserForm from './NewUser.js';
-import NewService from './NewService'
 
 const saveServiceToServer = (newService) =>
     fetch('/api/service/',
@@ -14,30 +13,20 @@ const saveServiceToServer = (newService) =>
     ).then(res => res.json())
 
 
-export default class ServicesByUserId extends React.Component {
+export default class NewServiceForm extends React.Component {
+
     state = {
-        services: [
-            {
-                serviceName: "",
-                userId: ""
-
-            }
-        ]
+        services: [],
+        formData: {
+            serviceName: "",
+            userId: ""
+        }
     }
-    // state = {
-    //     newServices: [
-    //         {
-    //             serviceName: "",
-    //             userId: ""
-
-    //         }
-    //     ]
-    // }
 
     handleInput = (evnt) => {
-        let newService = { ...this.state };
+        let newService = { ...this.state.serviceName };
         newService[evnt.target.name] = evnt.target.value;
-        this.setState(newService)
+        this.setState({ serviceName: newService, userId: this.props.userId })
     }
 
     handleSubmit = (evnt) => {
@@ -59,10 +48,7 @@ export default class ServicesByUserId extends React.Component {
     componentDidMount = () => {
         fetch('/api/service/')
             .then(res => res.json())
-            .then(services => {
-                console.log('Heyyyy', services)
-                // this.setState({ services })
-            })
+            .then(services => this.setState({ services }))
             .catch(err => {
                 console.log(err)
             })
@@ -95,11 +81,6 @@ export default class ServicesByUserId extends React.Component {
 
     //     }
     // }
-    componentDidUpdate = () => {
-        // if(this.service.match.params.id ==this.user.props.match.params.id){
-
-        // }
-    }
 
     renderServiceDropdown = () => {
         return (
@@ -112,39 +93,32 @@ export default class ServicesByUserId extends React.Component {
                             {service.serviceName}
 
                         </Link>
-                        {/* <li>
-                            <form onSubmit={this.handleSubmit}>
-                                <input type="text" name="serviceName"
-                                    onChange={this.handleInput}
-                                    value={this.state.userName}
-                                    placeholder="New Service" />
-
-                                <input type="submit" value="New Service" />
-                            </form>
-                        </li> */}
-                        {/* link to go home */}
-
-                        <Link to={`/`}>
-                            {"Home"}
-                        </Link>
-
-
                     </li>
                 )}
+
+                <form onSubmit={this.handleSubmit}>
+                    <input type="text" name="serviceName"
+                        onChange={this.handleInput}
+                        value={this.state.userName}
+                        placeholder="New Service" />
+
+                    <input type="submit" value="New Service" />
+                </form>
+
+                {/* link to go home */}
+                <Link to={`/`}>
+                    {"Home"}
+                </Link>
             </ol>
 
         )
     }
     // if(this.props.match.param.userId = service.id){
     render = () => {
-        console.log('howdyyyy', this.state.services)
         return (
             <div className="App">
-                <header>services</header>
-                {/* <p>{this.renderServiceDropdown()}</p> */}
-                <NewService
-                    userId={this.props.match.params.id}
-                />
+                {/* <header>services</header> */}
+                <p>{this.renderServiceDropdown()}</p>
             </div>
         )
 
