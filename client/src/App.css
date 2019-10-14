@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: orange;
 }
 
 .App-logo {
@@ -19,4 +20,22 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.serviceByUserIdCont{
+  background-color:red;
+  border:solid;
+}
+
+.newServiceCont{
+  background-color: red;
+}
+
+.serviceLi{
+  background-color: green;
+  border: solid;
+}
+
+.newUserSubmission{
+  border:solid;
 }

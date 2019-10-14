@@ -94,10 +94,10 @@ export default class ServicesByUserId extends React.Component {
 
     renderServiceDropdown = () => {
         return (
-            <ol>
+            <ol className="serviceCont">
                 {/* map users into new array user, then get new array elem id */}
                 {this.state.services.map(service =>
-                    <li value={service.id}>
+                    <li value={service.id} className='serviceLi'>
                         {console.log(service.id)}
                         <Link to={`/password/${service.id}`}>
                             {service.serviceName}
@@ -131,7 +131,7 @@ export default class ServicesByUserId extends React.Component {
     render = () => {
         console.log('howdyyyy', this.state.services)
         return (
-            <div className="App">
+            <div className="serviceByUserIdCont">
                 <header>services</header>
                 {/* <p>{this.renderServiceDropdown()}</p> */}
                 <NewService

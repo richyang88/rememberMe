@@ -91,7 +91,7 @@ export default class NewServiceForm extends React.Component {
 
     renderServiceDropdown = () => {
         return (
-            <ol>
+            <ol className='newServiceCont'>
                 {/* map users into new array user, then get new array elem id */}
                 {this.state.services.map(service =>
                     <li value={service.id}>
@@ -103,14 +103,14 @@ export default class NewServiceForm extends React.Component {
                     </li>
                 )}
 
-                <form onSubmit={this.handleSubmit}>
+                {/* <form onSubmit={this.handleSubmit}>
                     <input type="text" name="serviceName"
                         onChange={this.handleInput}
-                        value={this.state.userName}
+                        value={this.state.services.serviceName}
                         placeholder="New Service" />
 
                     <input type="submit" value="New Service" />
-                </form>
+                </form> */}
 
                 {/* link to go home */}
                 <Link to={`/`}>

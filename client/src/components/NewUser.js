@@ -42,7 +42,8 @@ export default class NewUserForm extends React.Component {
             <input type="text" name="userName"
                 onChange={this.handleInput}
                 value={this.state.userName}
-                placeholder="User Name" />
+                placeholder="User Name"
+                className='newUserSubmission' />
 
             <input type="submit" value="New User" />
         </form>
