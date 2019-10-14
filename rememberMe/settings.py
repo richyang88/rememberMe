@@ -122,11 +122,19 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
 #insert REST_Framework that enables you to do POST and DELETE
 REST_FRAMEWORK = {    
     'DEFAULT_PERMISSION_CLASSES': [    
         'rest_framework.permissions.AllowAny',    
     ]    
 }
+
+#Insert when linking React 
+REACT_APP_DIR = "client"
+
+STATICFILES_DIRS = [
+    os.path.join(REACT_APP_DIR, 'build', 'static')
+]
 
 django_heroku.settings(locals())
