@@ -24,7 +24,7 @@ class App extends React.Component {
   render = () => {
     return (
       <div className="App">
-        <header>Remember Me</header>
+        <header className='headerCont'>Remember Me</header>
         {/* <p>{this.renderUserDropdown()}</p> */}
         <NewUserForm addNewUser={this.addNewUser} />
         <Switch>

@@ -1,6 +1,15 @@
 .App {
   text-align: center;
   background-color: orange;
+  background-image: url('./public/cocoAltar.jpg');
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  color:white;
+}
+
+.headerCont{
+  color:white;
 }
 
 .App-logo {
@@ -22,13 +31,48 @@
   color: #09d3ac;
 }
 
-.serviceByUserIdCont{
-  background-color:red;
+.userNameHome{
+  border:solid brown;
+  list-style: none;
+  text-align: left;  
+  text-decoration: none;
+  background-color: rgba(135,57,31,0.8);
+}
+
+.homeList{
+  border:solid brown;
+  list-style: none;
+  text-align: left;  
+  text-decoration: none;
+  background-color: rgba(200,57,31,0.8);
+}
+
+.homeListItem{
+  color:white;
+  /* border:solid black; */
+}
+
+
+.serviceCont{
+  background-color:blue;
   border:solid;
+  text-decoration: none;
+}
+
+.serviceByUserIdCont{
+  border:solid brown;
+  list-style: none;
+  text-align: left;  
+  text-decoration: none;
+  background-color: rgba(135,57,31,0.8);
 }
 
 .newServiceCont{
-  background-color: red;
+  border:solid brown;
+  list-style: none;
+  text-align: left;  
+  text-decoration: none;
+  background-color: rgba(200,57,31,0.8);
 }
 
 .serviceLi{

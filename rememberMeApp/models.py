@@ -15,4 +15,4 @@ class Service(models.Model):
 
 class Password(models.Model):
     passwordField = models.CharField(max_length = 50)
-    service = models.ForeignKey(Service, default=1, on_delete=models.CASCADE, related_name='services')
+    # service = models.ForeignKey(Service, default=1, on_delete=models.CASCADE, related_name='services')

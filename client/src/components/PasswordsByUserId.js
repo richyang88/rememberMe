@@ -29,7 +29,7 @@ export default class PasswordByUserId extends React.Component {
 
     renderPasswordDropdown = () => {
         return (
-            <ol>
+            <ol className='homeList'>
                 {/* map users into new array user, then get new array elem id */}
                 {this.state.passwords.map(password =>
                     <li value={password.id}>
@@ -37,6 +37,12 @@ export default class PasswordByUserId extends React.Component {
                         {password.passwordField}
                         {/* {'here'} */}
                         {/* </Link> */}
+                        <li>
+                            <Link to={`/`}>
+                                {"Home"}
+
+                            </Link>
+                        </li>
                     </li>)}
             </ol>
         )
@@ -44,15 +50,10 @@ export default class PasswordByUserId extends React.Component {
 
     render = () => {
         return (
-            <div className="App">
-                <header>passwords here</header>
+            <div className="userNameHome">
+                <header>passwords</header>
                 <p>{this.renderPasswordDropdown()}</p>
-                <li>
-                    <Link to={`/`}>
-                        {"Home"}
 
-                    </Link>
-                </li>
             </div>
         )
 

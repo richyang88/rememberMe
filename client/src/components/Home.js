@@ -32,10 +32,10 @@ export default class Home extends React.Component {
 
   renderUserDropdown = () => {
     return (
-      <ol>
+      <ol className='homeList'>
       {/* map users into new array user, then get new array elem id */}
         {this.state.users.map(user =>
-          <li value={user.id}>
+          <li value={user.id} className='homeListItem'>
             <Link to={`/service/${user.id}`}>
               {user.userName}
             </Link>
@@ -45,7 +45,7 @@ export default class Home extends React.Component {
   }
   render = () => {
     return (
-        <div className="App">
+        <div className="userNameHome">
             <header>UserNames</header>
             <p>{this.renderUserDropdown()}</p>
         </div>

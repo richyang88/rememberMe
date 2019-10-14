@@ -38,7 +38,7 @@ export default class NewUserForm extends React.Component {
             })
     }
     render = () => (
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className='newUserCont'>
             <input type="text" name="userName"
                 onChange={this.handleInput}
                 value={this.state.userName}

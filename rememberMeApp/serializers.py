@@ -10,10 +10,10 @@ class UserSerializer(serializers.ModelSerializer):
 class ServiceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Service
-        fields = ['id','serviceName','user']
+        fields = ['id','serviceName']
 
 #Password Field        
 class PasswordSerializer(serializers.ModelSerializer):
     class Meta:
         model = Password
-        fields = ['id','passwordField','services']
+        fields = ['id','passwordField']

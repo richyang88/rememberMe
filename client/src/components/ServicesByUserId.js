@@ -94,7 +94,7 @@ export default class ServicesByUserId extends React.Component {
 
     renderServiceDropdown = () => {
         return (
-            <ol className="serviceCont">
+            <ol className="serviceContDis">
                 {/* map users into new array user, then get new array elem id */}
                 {this.state.services.map(service =>
                     <li value={service.id} className='serviceLi'>
