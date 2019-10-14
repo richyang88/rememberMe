@@ -25,4 +25,4 @@ Remember Me! The App that lets your and familia share and enjoy each other's ser
 
 ## Wireframes
 
-![Home](client/src/public/wireFrame.jpg)
+![Home](client/src/public/wireFrameRotate.jpg)
